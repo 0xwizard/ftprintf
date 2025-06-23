@@ -20,7 +20,8 @@ static int	ft_typecheck(const char p, va_list ap)
 		i += ft_putchar(va_arg(ap, int));
 	if (p == 's')
 		i += ft_putstr(va_arg(ap, char *));
-	if (p == 
+	if (p == 'p')
+		i += 
 	return (i);
 }
 

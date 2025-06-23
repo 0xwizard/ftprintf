@@ -25,7 +25,7 @@ int	ft_putstr(char *p)
 	i = 0;
 	while (p[i])
 	{
-		ft_putchar(&p[i]);
+		ft_putchar(p[i]);
 		i++;
 	}
 	return (i);
