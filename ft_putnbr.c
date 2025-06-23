@@ -14,8 +14,8 @@
 
 int	ft_putnbr(int nb)
 {
-	char numb;
-	int count;
+	char	numb;
+	int		count;
 
 	count = 0;
 	if (nb == -2147483648)
@@ -35,15 +35,15 @@ int	ft_putnbr(int nb)
 	}
 	else
 	{
-		count+=ft_putnbr(nb / 10);
-		count+=ft_putnbr(nb % 10);
+		count += ft_putnbr(nb / 10);
+		count += ft_putnbr(nb % 10);
 	}
 	return (count);
 }
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	//ft_putnbr(444);
+	// ft_putnbr(444);
 	printf("%d", ft_putnbr(2147483647));
 }

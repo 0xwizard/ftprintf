@@ -21,7 +21,7 @@ static int	ft_typecheck(const char p, va_list ap)
 	if (p == 's')
 		i += ft_putstr(va_arg(ap, char *));
 	if (p == 'p')
-		i += 
+		i +=
 	return (i);
 }
 

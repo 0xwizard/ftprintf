@@ -18,5 +18,6 @@
 int	ft_printf(const char *, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *p);
+int	ft_putnbr(int nb);
 
 #endif
