@@ -11,36 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
-int	ft_putnbr(int nb)
-{
-	char	numb;
-	int		count;
-
-	count = 0;
-	if (nb == -2147483648)
-	{
-		count += ft_putstr("-2147483648");
-		return (count);
-	}
-	else if (nb < 0)
-	{
-		count += ft_putchar('-');
-		count += ft_putnbr(-nb);
-	}
-	else if (nb <= 9)
-	{
-		numb = nb + '0';
-		count += ft_putchar(numb);
-	}
-	else
-	{
-		count += ft_putnbr(nb / 10);
-		count += ft_putnbr(nb % 10);
-	}
-	return (count);
-}
-*/
 
 int	ft_putnbrbase(long long x, char *base)
 {

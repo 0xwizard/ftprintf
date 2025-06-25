@@ -1,6 +1,7 @@
 CFILES = ft_putchar.c \
-	ft_putnbr.c \
-	ft_printf.c 
+	ft_putnbrbase.c \
+	ft_printf.c
+
 
 NAME = libftprintf.a
 
@@ -15,7 +16,7 @@ $(NAME) : $(OFILES)
 	ar -rcs $(NAME) $(OFILES)
 
 clean:
-	rm -rf $(OFILES) 
+	rm -rf $(OFILES)
 
 fclean: clean
 	rm -rf $(NAME)

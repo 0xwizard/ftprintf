@@ -6,14 +6,19 @@
 /*   By: hsari <hsari@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 21:20:56 by hsari             #+#    #+#             */
-/*   Updated: 2025/06/24 21:21:45 by hsari            ###   ########.fr       */
+/*   Updated: 2025/06/25 20:44:54 by hsari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h> 
 
 #include <stdio.h>
 
 int main(void)
-{
-	void *p;
-	printf("%p", p); 
+{	
+	printf("abc");
+	printf("def\n");
+	write(1, "1", 1);
+	write(1, "2", 1);
+	printf("3\n");
+	printf("%%");
 }
