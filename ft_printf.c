@@ -13,29 +13,31 @@
 
 static int	ft_typecheck(const char p, va_list ap)
 {
-	int	i;
+	void *x; 
 
-	i = 0;
+	x = 0; 
 	if (p == 'c')
-		i += ft_putchar(va_arg(ap, int));
-	if (p == 's')
-		i += ft_putstr(va_arg(ap, char *));
-	if (p == 'p')
+		return (ft_putchar(va_arg(ap, int)));
+	else if (p == 's')
+		return  (ft_putstr(va_arg(ap, char *)));
+	else if (p == 'p')
 	{
-		i += ft_putstr("0x");
-		i += ft_putnbrbase(va_arg(ap, unsigned long), "0123456789abcdef");
+		x = va_arg(ap, void *);
+		if (!x)
+			return (ft_putstr("(nil)"));
+		return (ft_putstr("0x") + ft_putnbrbase((unsigned long)x, "0123456789abcdef"));
 	}
-	if (p == 'x')
-		i += ft_putnbrbase(va_arg(ap, unsigned int), "0123456789abcdef");
-	if (p == 'X')
-		i += ft_putnbrbase(va_arg(ap, unsigned int), "0123456789ABCDEF");
-	if (p == 'i' || p == 'd')
-		i += ft_putnbrbase(va_arg(ap, int), "0123456789");
-	if (p == 'u')
-		i += ft_putnbrbase(va_arg(ap, unsigned int), "0123456789");
-	if (p == '%')
-		i += ft_putchar('%');
-	return (i);
+	else if (p == 'x')
+		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789abcdef"));
+	else if (p == 'X')
+		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789ABCDEF"));
+	else if (p == 'i' || p == 'd')
+		return (ft_putnbr(va_arg(ap, int)));
+	else if (p == 'u')
+		return (ft_putnbr(va_arg(ap, unsigned int)));
+	else if (p == '%')
+		return (ft_putchar('%'));
+	return (0);
 }
 
 int	ft_printf(const char *p, ...)

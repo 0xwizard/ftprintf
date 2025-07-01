@@ -12,12 +12,15 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 # include <stdarg.h>
 # include <unistd.h>
 
 int	ft_printf(const char *, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *p);
-int	ft_putnbrbase(long long x, char *base);
+int ft_strlen(char *base);
+int ft_putnbr(long x);
+int	ft_putnbrbase(unsigned long long x, char *base);
 
 #endif

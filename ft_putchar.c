@@ -23,6 +23,8 @@ int	ft_putstr(char *p)
 	int	i;
 
 	i = 0;
+	if (!p)
+		return (ft_putstr("(null)"));
 	while (p[i])
 	{
 		ft_putchar(p[i]);
