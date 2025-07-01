@@ -25,7 +25,7 @@ static int	ft_typecheck(const char p, va_list ap)
 		x = va_arg(ap, void *);
 		if (!x)
 			return (ft_putstr("(nil)"));
-		return (ft_putstr("0x") + ft_putnbrbase((unsigned long)x, "0123456789abcdef"));
+		return (ft_putstr("0x") + ft_putnbrbase((long long)x, "0123456789abcdef"));
 	}
 	else if (p == 'x')
 		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789abcdef"));
