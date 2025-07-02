@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-int ft_strlen(char *base)
+
+unsigned long ft_strlen(char *base)
 {
 	int i;
 
@@ -26,7 +27,7 @@ int ft_base(unsigned long x, char *base)
 	int count; 
 
 	count = 0;
-    if (x >= (unsigned long)ft_strlen(base))
+    if (x >= ft_strlen(base))
         count += ft_base(x / ft_strlen(base), base);
 	count += ft_putchar(base[x % ft_strlen(base)]);
 	return (count);
@@ -42,7 +43,7 @@ int ft_putnbr(long x)
 	else 
 		return (ft_putnbr(x / 10) + ft_putnbr(x % 10));
 }
-
+/* 
 int	ft_putnbrbase(long long x, char *base)
 {
 	int	count;
@@ -52,13 +53,9 @@ int	ft_putnbrbase(long long x, char *base)
 		return (count += ft_putchar(base[0]));
 	if (x < 0)
 		x *= -1;
-	//if (c == 'x')
-		//count += ft_putstr("0x");
-	//if (c == 'X')
-		//count += ft_putstr("0X");
 	count += ft_base(x, base);
 	return (count);
-}
+}*/
 /*
 #include <stdio.h>
 

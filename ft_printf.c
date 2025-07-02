@@ -13,24 +13,16 @@
 
 static int	ft_typecheck(const char p, va_list ap)
 {
-	void *x; 
-
-	x = 0; 
 	if (p == 'c')
 		return (ft_putchar(va_arg(ap, int)));
 	else if (p == 's')
 		return  (ft_putstr(va_arg(ap, char *)));
 	else if (p == 'p')
-	{
-		x = va_arg(ap, void *);
-		if (!x)
-			return (ft_putstr("(nil)"));
-		return (ft_putstr("0x") + ft_putnbrbase((long long)x, "0123456789abcdef"));
-	}
+		return (ft_putp(va_arg(ap, void *)));
 	else if (p == 'x')
-		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789abcdef"));
+		return (ft_putx(va_arg(ap, unsigned int), p));
 	else if (p == 'X')
-		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789ABCDEF"));
+		return (ft_putx(va_arg(ap, unsigned int), p));
 	else if (p == 'i' || p == 'd')
 		return (ft_putnbr(va_arg(ap, int)));
 	else if (p == 'u')

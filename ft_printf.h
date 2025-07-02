@@ -19,9 +19,11 @@
 int	ft_printf(const char *, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *p);
-int ft_strlen(char *base);
+unsigned long ft_strlen(char *base);
 int ft_base(unsigned long x, char *base);
 int ft_putnbr(long x);
+int ft_putx(unsigned int x, char c);
+int ft_putp(void *p);
 int	ft_putnbrbase(long long x, char *base);
 
 #endif
