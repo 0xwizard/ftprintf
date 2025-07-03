@@ -6,7 +6,7 @@
 /*   By: hsari <hsari@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 19:45:54 by hsari             #+#    #+#             */
-/*   Updated: 2025/06/25 21:38:21 by hsari            ###   ########.fr       */
+/*   Updated: 2025/07/03 21:16:47 by hsari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -47,5 +47,6 @@ int	ft_printf(const char *p, ...)
 			count += ft_putchar(*p);
 		p++;
 	}
+	va_end(ap);
 	return (count);
 }
