@@ -16,13 +16,13 @@ static int	ft_typecheck(const char p, va_list ap)
 	if (p == 'c')
 		return (ft_putchar(va_arg(ap, int)));
 	else if (p == 's')
-		return  (ft_putstr(va_arg(ap, char *)));
+		return (ft_putstr(va_arg(ap, char *)));
 	else if (p == 'p')
 		return (ft_putp(va_arg(ap, void *)));
 	else if (p == 'x')
-		return (ft_putx(va_arg(ap, unsigned int), p));
+		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789abcdef"));
 	else if (p == 'X')
-		return (ft_putx(va_arg(ap, unsigned int), p));
+		return (ft_putnbrbase(va_arg(ap, unsigned int), "0123456789ABCDEF"));
 	else if (p == 'i' || p == 'd')
 		return (ft_putnbr(va_arg(ap, int)));
 	else if (p == 'u')
@@ -35,7 +35,7 @@ static int	ft_typecheck(const char p, va_list ap)
 int	ft_printf(const char *p, ...)
 {
 	va_list	ap;
-	int	count;
+	int		count;
 
 	va_start(ap, p);
 	count = 0;

@@ -1,7 +1,7 @@
 CFILES = ft_putchar.c \
 	ft_putnbrbase.c \
 	ft_printf.c	\
-	ft_putxp.c
+	ft_putp.c
 
 
 NAME = libftprintf.a

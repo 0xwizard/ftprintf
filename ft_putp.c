@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsari <hsari@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/21 19:08:49 by hsari             #+#    #+#             */
-/*   Updated: 2025/06/24 22:29:08 by hsari            ###   ########.fr       */
+/*   Created: 2025/07/03 17:42:59 by hsari             #+#    #+#             */
+/*   Updated: 2025/07/03 17:42:59 by hsari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h" 
 
-# include <stdarg.h>
-# include <unistd.h> 
-
-int				ft_printf(const char *p, ...);
-int				ft_putchar(char c);
-int				ft_putstr(char *p);
-unsigned long	ft_strlen(char *base);
-int				ft_putnbr(long x);
-int				ft_putp(void *p);
-int				ft_putnbrbase(unsigned long long x, char *base);
-
-#endif
+int	ft_putp(void *p)
+{
+	if (!p)
+		return (ft_putstr("(nil)"));
+	return (ft_putstr("0x")
+		+ ft_putnbrbase((unsigned long)p, "0123456789abcdef"));
+}
